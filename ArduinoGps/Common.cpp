@@ -41,7 +41,7 @@ DateTime::DateTime( short year, byte month, byte day,
 	_year = year; 
 	_month = month; 
 	_day = day;
-  _hour = hour; 
+	_hour = hour; 
 	_minute = minute; 
 	_second = second;
 }    
@@ -75,15 +75,16 @@ bool DateTime::operator!=(const DateTime &other) const {
 }
 
 String DateTime::toString() {
+  //ISO DateTime string
   String result = "";
-  
+  String empty = "";
   result += String(_year);
-  result += "-" + String(_month);
-  result += "-" + String(_day);
+  result += "-" + ((_month < 10) ? "0" : empty) + String(_month);
+  result += "-" + ((_day < 10) ? "0" : empty) + String(_day);
   
-  result += " " +String(_hour);
-  result += ":" + String(_minute);
-  result += ":" + String(_second);
+  result += "T" + ((_hour < 10) ? "0" : empty) + String(_hour);
+  result += ":" + ((_minute < 10) ? "0" : empty) + String(_minute);
+  result += ":" + ((_second < 10) ? "0" : empty) + String(_second);
   
   return result;
 }
@@ -118,7 +119,7 @@ void GpsData::dateTimeUtc(DateTime val) { _dateTimeUtc = val; }
 String GpsData::toString() {
   String result = "";
 
-  result += "Time" + _dateTimeUtc.toString();
+  result += "Time=" + _dateTimeUtc.toString();
   result += " Lat=" + String(_lat, 6);
   result += " Lon=" + String(_lon, 6);
   
