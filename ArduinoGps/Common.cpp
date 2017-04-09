@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include "Common.h"
 
-TimeLogger::TimeLogger(bool enabled, char* name)
+TimeLogger::TimeLogger(bool enabled, String name)
 {
   _startTimeMs = millis();
   _name = name;

@@ -1,7 +1,7 @@
-#include "Common.h"
+#include <QueueList.h>
 #include <Thread.h>
 #include <SoftwareSerial.h>
-
+#include "Common.h"
 
 Thread sendDataThread;
 Thread gpsStatsThread;

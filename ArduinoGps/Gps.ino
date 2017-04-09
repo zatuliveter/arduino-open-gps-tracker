@@ -10,8 +10,7 @@ void collectGpsDataCallback()
   interrupts();
   
   TimeLogger timeLog = TimeLogger(false, "--------GPS");
-  bool isnewDataCome = false;
-
+  
   // Allow serial to read at least one byte.
   while(!gpsSerial.available()){
     //Serial.println("waiting for data");

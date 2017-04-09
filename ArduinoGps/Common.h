@@ -1,12 +1,12 @@
 class TimeLogger
 {
   public:
-    TimeLogger(bool enabled, char* name);
+    TimeLogger(bool enabled, String name);
     //unsigned long ElapsedMs();
     void Done();
   private:
     unsigned long _startTimeMs;
-    char* _name;
+    String _name;
     bool _enabled;
 };
 
