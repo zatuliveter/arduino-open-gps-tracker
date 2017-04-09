@@ -8,6 +8,7 @@ Thread gpsStatsThread;
 SoftwareSerial gpsSerial(3/*rx*/, 4/*tx*/);
 bool noInterupt = false;
 
+
 void setup() {
   Serial.begin(9600);
   gpsSerial.begin(9600);
@@ -24,6 +25,7 @@ void setup() {
   attachInterrupt(1, collectGpsDataCallback, RISING );
   
 }
+
 
 void loop() {
   // Main Loop
