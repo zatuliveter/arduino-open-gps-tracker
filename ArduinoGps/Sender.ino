@@ -1,14 +1,14 @@
 
 void sendDataCallback() 
 {   
-  TimeLogger timeLog = TimeLogger(true, "--------GPRS send");
+  TimeLogger timeLog(true, "--------GPRS send");
 
-  for(int i=0; i<5000; i++)
+  for(int i=0; i<500; i++)
   {
     delay(1);
   }  
   //blinkN(3);
     
-  timeLog.Done();  
+  timeLog.done();
 }
 

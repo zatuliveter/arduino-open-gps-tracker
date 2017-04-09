@@ -10,7 +10,7 @@ TimeLogger::TimeLogger(bool enabled, String name)
   
   if(_enabled) Serial.println(_name);
 }
-void TimeLogger::Done()
+void TimeLogger::done()
 {
   if(_enabled) {
     Serial.print(_name);
@@ -22,14 +22,14 @@ void TimeLogger::Done()
   }
 }
 
-void blinkN(int times) 
+void blinkN(int times, int delayMs) 
 {
   for(int i=0; i<times; i++)
   {
     digitalWrite(13, true);
-    delay(250);
+    for(int i=1; i<delayMs; i++) delay(1);
     digitalWrite(13, false);
-    delay(250); 
+    for(int i=1; i<delayMs; i++) delay(1);    
   }  
 }
 
