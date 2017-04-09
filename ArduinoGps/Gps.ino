@@ -22,11 +22,9 @@ void collectGpsDataCallback()
   {
     char dataChar = gpsSerial.read(); //reading symbol by simbol
     //Serial.write(dataChar); // GPS data flowing
-    //delay(1);
     
     gpsEncoder.encode(dataChar);
   }
-
 
   timeLog.Done();
 

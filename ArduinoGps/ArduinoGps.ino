@@ -32,8 +32,6 @@ void loop() {
  
   if(gpsStatsThread.shouldRun()) gpsStatsThread.run();
 
-  //collectGpsDataCallback();
-
 }
 
 

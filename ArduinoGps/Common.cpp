@@ -9,7 +9,6 @@ TimeLogger::TimeLogger(bool enabled, char* name)
   _enabled = enabled;
   
   if(_enabled) Serial.println(_name);
-  //Serial.println(F(" time logger starting"));  
 }
 void TimeLogger::Done()
 {
@@ -22,13 +21,6 @@ void TimeLogger::Done()
     Serial.println(" ms.");
   }
 }
-/*
-unsigned long TimeLogger::ElapsedMs()
-{
-  unsigned long elapsedMs = millis() - _startTimeMs;
-  return elapsedMs;
-}
-*/
 
 void blinkN(int times) 
 {

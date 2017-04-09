@@ -8,8 +8,7 @@ void sendDataCallback()
     delay(1);
   }  
   //blinkN(3);
-  
-  
+    
   timeLog.Done();  
 }
 
