@@ -6,9 +6,10 @@
 Thread sendDataThread;
 Thread gpsStatsThread;
 Thread blinkThread;
-SoftwareSerial gpsSerial(2/*rx*/, 4/*tx*/);
+SoftwareSerial gpsSerial(3/*rx*/, 4/*tx*/);
 volatile bool noInterrupt = false;
 bool blinkStatus = false;
+GpsData lastPositon = GpsData();
 
 void setup() {
   gpsSerial.begin(9600);
@@ -27,8 +28,9 @@ void setup() {
   blinkThread.onRun(blinkCallback);
   blinkThread.setInterval(500);
 
-  // interrupt 0 - digital input 2 for arduino uno
-  attachInterrupt(0, collectGpsDataCallback, CHANGE);
+  // interrupt 1 - digital input 3 for arduino uno
+  //TODO: Check it: Looks like we cannot use interrupts togeter with SoftSerial, it hangs at some point of time
+  attachInterrupt(1, collectGpsDataCallback, CHANGE);
 }
 
 void loop() {
