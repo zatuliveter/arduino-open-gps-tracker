@@ -22,8 +22,7 @@ void setup() {
   gpsStatsThread.setInterval(3000);
 
   // interrupt 1 - digital input 3 for arduino uno
-  attachInterrupt(1, collectGpsDataCallback, RISING );
-  
+  attachInterrupt(1, collectGpsDataCallback, RISING );  
 }
 
 void loop() {
