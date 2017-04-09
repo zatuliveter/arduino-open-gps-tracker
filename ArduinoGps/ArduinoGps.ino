@@ -29,7 +29,7 @@ void setup() {
   blinkThread.setInterval(500);
 
   // interrupt 1 - digital input 3 for arduino uno
-  //TODO: Check it: Looks like we cannot use interrupts togeter with SoftSerial, it hangs at some point of time
+  //TODO: Check it: Looks like we cannot use interrupts together with SoftSerial, it hangs at some point of time
   attachInterrupt(1, collectGpsDataCallback, CHANGE);
 }
 
